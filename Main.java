@@ -1,16 +1,25 @@
 public class Main {
     public static void main(String[] args) {
-        // Use "World" if no arguments provided
         String greetingNames;
 
-        if (args.length > 0) {
-            // Join all names with comma and space
-            greetingNames = String.join(", ", args);
-        } else {
+        if (args.length == 0) {
             greetingNames = "World";
+        } else {
+            StringBuilder sb = new StringBuilder();
+            boolean first = true;
+
+            // Enhanced for loop to iterate over all command-line arguments
+            for (String name : args) {
+                if (!first) {
+                    sb.append(", "); // add comma separator for subsequent names
+                }
+                sb.append(name);
+                first = false;
+            }
+
+            greetingNames = sb.toString();
         }
 
-        // Display the greeting
         System.out.println("Hello, " + greetingNames + "!");
     }
 }
