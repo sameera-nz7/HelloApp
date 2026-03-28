@@ -1,16 +1,12 @@
 // Main.java
 public class Main {
     public static void main(String[] args) {
-        String name;
+        // Using ternary operator to assign name
+        String name = (args.length > 0) ? args[0] : "World";
 
-        // Check if a command-line argument is provided
-        if (args.length > 0) {
-            name = args[0]; // First argument
-        } else {
-            name = "World"; // Default value
-        }
-
-        // Print personalized greeting
+        // Print the greeting
         System.out.println("Hello, " + name + "!");
     }
+
 }
+
