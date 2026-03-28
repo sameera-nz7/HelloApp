@@ -1,12 +1,16 @@
-// Main.java
 public class Main {
     public static void main(String[] args) {
-        // Using ternary operator to assign name
-        String name = (args.length > 0) ? args[0] : "World";
+        // Use "World" if no arguments provided
+        String greetingNames;
 
-        // Print the greeting
-        System.out.println("Hello, " + name + "!");
+        if (args.length > 0) {
+            // Join all names with comma and space
+            greetingNames = String.join(", ", args);
+        } else {
+            greetingNames = "World";
+        }
+
+        // Display the greeting
+        System.out.println("Hello, " + greetingNames + "!");
     }
-
 }
-
